@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stardew Valley</title>
+    <link rel="stylesheet" href="estacoes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wallpaper-bg"></div>
+    <div class="wiki-container">
+        <!-- Nova Navbar Superior -->
+        <header class="top-main-nav">
+            <a href="Estacoes.html">Estações</a>
+            <a href="#">Centro Comunitário</a>
+            <a href="#">Minas</a>
+            <a href="#">Construções</a>
+        </header>
+
+        <div class="wiki-header">
+            <h1>🌾 Stardew Valley 🌽</h1>
+            <p>Guia Completo: Estações, Aniversários, Eventos e Peixes</p>
+        </div>
+
+        <!-- Abas das Estações -->
+        <nav class="wiki-nav">
+            <button onclick="switchTab('spring')" class="tab-btn active" data-tab="spring">🌱 Primavera</button>
+            <button onclick="switchTab('summer')" class="tab-btn" data-tab="summer">☀️ Verão</button>
+            <button onclick="switchTab('fall')" class="tab-btn" data-tab="fall">🍂 Outono</button>
+            <button onclick="switchTab('winter')" class="tab-btn" data-tab="winter">❄️ Inverno</button>
+            <button onclick="switchTab('extra')" class="tab-btn" data-tab="extra">⛏️ Minas & Deserto</button>
+            <button onclick="switchTab('resumo')" class="tab-btn" data-tab="resumo">📋 Resumo por Estação</button>
+        </nav>
+
+        <!-- Nova Barra de Filtro de Conteúdo -->
+        <div class="content-filter-bar">
+            <span class="filter-label">Filtrar exibição:</span>
+            <button onclick="filterContent('all')" class="filter-btn active" data-filter="all">Mostrar Tudo</button>
+            <button onclick="filterContent('birthdays')" class="filter-btn" data-filter="birthdays">🎁 Aniversários</button>
+            <button onclick="filterContent('events')" class="filter-btn" data-filter="events">🎉 Eventos</button>
+            <button onclick="filterContent('fish')" class="filter-btn" data-filter="fish">🐟 Peixes</button>
+        </div>
+
+        <main>
+            <!-- PRIMAVERA -->
+            <section id="spring" class="season-section active">
+                <h2 class="section-title">🌱 Primavera</h2>
+                
+                <div class="content-block birthdays-block">
+                    <h3>🎁 Aniversários e Presentes dos NPCs</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>NPC</th>
+                                    <th>O que Ama (❤️)</th>
+                                    <th>O que Gosta (👍)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>4</td><td>Kent</td><td>Risoto de Samambaia</td><td>Narciso</td></tr>
+                                <tr><td>7</td><td>Lewis</td><td>Pimenta, Mirtilo</td><td>Coco, Narciso</td></tr>
+                                <tr><td>10</td><td>Vincent</td><td>Uva, Lesma</td><td>Narciso, Coco</td></tr>
+                                <tr><td>14</td><td>Haley</td><td>Coco, Girassol</td><td>Narciso</td></tr>
+                                <tr><td>18</td><td>Pam</td><td>Chirívia, Cerveja</td><td>Narciso</td></tr>
+                                <tr><td>20</td><td>Shane</td><td>Pimenta, Cerveja</td><td>Ovo (Nulo)</td></tr>
+                                <tr><td>26</td><td>Pierre</td><td>Lula frita</td><td>Dente-de-leão</td></tr>
+                                <tr><td>27</td><td>Emily</td><td>Gemas raras</td><td>Quartzo</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block events-block">
+                    <h3>🎉 Eventos da Estação</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Evento</th>
+                                    <th>Tema</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>13</td><td>Festival do Ovo</td><td>Minigames</td></tr>
+                                <tr><td>15-17</td><td>Festival do Deserto</td><td>Minigames</td></tr>
+                                <tr><td>15-18</td><td>Coleta de Amoras</td><td>Coleta</td></tr>
+                                <tr><td>24</td><td>Dança das Flores</td><td>Dança</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block fish-block">
+                    <h3>🐟 Peixes da Primavera</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Peixe</th>
+                                    <th>Horário</th>
+                                    <th>Clima</th>
+                                    <th>Lugar</th>
+                                    <th>Gold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Anchova</td><td>-</td><td>-</td><td>Oceano</td><td>45~90</td></tr>
+                                <tr><td>Achigã-pequeno</td><td>-</td><td>-</td><td>Cidade, Lago</td><td>75~90</td></tr>
+                                <tr><td>Bagre</td><td>6h-00h</td><td>Chuva</td><td>Rio, Floresta Secreta, Pântano</td><td>300~600</td></tr>
+                                <tr><td>Peixe-sol</td><td>6h-19h</td><td>Sol, Vento</td><td>Rio</td><td>45~90</td></tr>
+                                <tr><td>Arenque</td><td>-</td><td>-</td><td>Oceano</td><td>45~90</td></tr>
+                                <tr><td>Enguia</td><td>16h-2h</td><td>Chuva</td><td>Oceano</td><td>127~255</td></tr>
+                                <tr><td>Sardinha</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>60~120</td></tr>
+                                <tr><td>Alocine</td><td>9h-2h</td><td>Chuva</td><td>Rio</td><td>90~180</td></tr>
+                                <tr><td>Linguado</td><td>6h-20h</td><td>-</td><td>Oceano</td><td>150~300</td></tr>
+                                <tr><td>Halibute</td><td>6h-11h / 19h-2h</td><td>-</td><td>Oceano, Montanha</td><td>120~240</td></tr>
+                                <tr><td>Carpa</td><td>-</td><td>-</td><td>Montanha, Floresta Secreta, Esgoto</td><td>45~90</td></tr>
+                                <tr><td>Lenda</td><td>-</td><td>Chuva</td><td>Montanha</td><td>7,5k~15k</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VERÃO -->
+            <section id="summer" class="season-section">
+                <h2 class="section-title">☀️ Verão</h2>
+                
+                <div class="content-block birthdays-block">
+                    <h3>🎁 Aniversários e Presentes dos NPCs</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>NPC</th>
+                                    <th>O que Ama (❤️)</th>
+                                    <th>O que Gosta (👍)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>4</td><td>Jas</td><td>Bolo rosa</td><td>Narciso</td></tr>
+                                <tr><td>8</td><td>Gus</td><td>Laranja, Diamante</td><td>Narciso</td></tr>
+                                <tr><td>10</td><td>Maru</td><td>Couve-flor, Morango</td><td>Quartzo</td></tr>
+                                <tr><td>13</td><td>Alex</td><td>Café da manhã completo, Lanchinho</td><td>Quartzo</td></tr>
+                                <tr><td>17</td><td>Sam</td><td>Pizza, Olho de Tigre</td><td>Joja-cola</td></tr>
+                                <tr><td>19</td><td>Demetrius</td><td>Morango, Sorvete</td><td>Cogumelo roxo</td></tr>
+                                <tr><td>22</td><td>Anão</td><td>Gemas raras</td><td>Quartzo</td></tr>
+                                <tr><td>24</td><td>Willy</td><td>Abóbora, Bagre, Diamante</td><td>Quartzo</td></tr>
+                                <tr><td>26</td><td>Leo</td><td>Manga, Pena de pato</td><td>Quartzo</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block events-block">
+                    <h3>🎉 Eventos da Estação</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Evento</th>
+                                    <th>Tema</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>11</td><td>Luau</td><td>Sopa</td></tr>
+                                <tr><td>12-14</td><td>Coleta na Praia</td><td>Coleta</td></tr>
+                                <tr><td>20-21</td><td>Competição de Trutas</td><td>Pesca</td></tr>
+                                <tr><td>28</td><td>Dança na Praia</td><td>Dança</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block fish-block">
+                    <h3>🐟 Peixes do Verão</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Peixe</th>
+                                    <th>Horário</th>
+                                    <th>Clima</th>
+                                    <th>Lugar</th>
+                                    <th>Gold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Baiacu</td><td>12h-16h</td><td>Sol</td><td>Oceano</td><td>300~600</td></tr>
+                                <tr><td>Atum</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>150~300</td></tr>
+                                <tr><td>Truta Arco-íris</td><td>6h-19h</td><td>Sol</td><td>Rio, Montanha</td><td>97~195</td></tr>
+                                <tr><td>Bagre</td><td>6h-00h</td><td>Chuva</td><td>Rio, Floresta Secreta, Pântano</td><td>300~600</td></tr>
+                                <tr><td>Lúcio</td><td>-</td><td>-</td><td>Rio, Floresta</td><td>150~300</td></tr>
+                                <tr><td>Peixe-sol</td><td>6h-19h</td><td>Sol, Vento</td><td>Rio</td><td>45~90</td></tr>
+                                <tr><td>Salmonete</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>112~225</td></tr>
+                                <tr><td>Polvo</td><td>6h-13h</td><td>-</td><td>Oceano</td><td>225~450</td></tr>
+                                <tr><td>Cioba</td><td>6h-19h</td><td>Chuva</td><td>Oceano</td><td>75~150</td></tr>
+                                <tr><td>Super-Pepino</td><td>18h-2h</td><td>-</td><td>Oceano</td><td>375~750</td></tr>
+                                <tr><td>Esturjão</td><td>6h-19h</td><td>-</td><td>Montanha</td><td>300~600</td></tr>
+                                <tr><td>Tilápia</td><td>6h-14h</td><td>-</td><td>Oceano, Montanha</td><td>112~225</td></tr>
+                                <tr><td>Dourado</td><td>6h-19h</td><td>-</td><td>Floresta</td><td>150~300</td></tr>
+                                <tr><td>Linguado</td><td>6h-20h</td><td>-</td><td>Oceano</td><td>150~300</td></tr>
+                                <tr><td>Alocine</td><td>9h-2h</td><td>Chuva</td><td>Rio</td><td>90~180</td></tr>
+                                <tr><td>Halibute</td><td>6h-11h / 19h-2h</td><td>-</td><td>Oceano, Montanha</td><td>120~240</td></tr>
+                                <tr><td>Carpa</td><td>-</td><td>-</td><td>Montanha, Floresta Secreta, Esgoto</td><td>45~90</td></tr>
+                                <tr><td>Peixe-Carmin</td><td>-</td><td>-</td><td>Leste da Praia</td><td>2,2k~4,5k</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUTONO -->
+            <section id="fall" class="season-section">
+                <h2 class="section-title">🍂 Outono</h2>
+                
+                <div class="content-block birthdays-block">
+                    <h3>🎁 Aniversários e Presentes dos NPCs</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>NPC</th>
+                                    <th>O que Ama (❤️)</th>
+                                    <th>O que Gosta (👍)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2</td><td>Penny</td><td>Esmeralda, Melão</td><td>Alho-poró</td></tr>
+                                <tr><td>5</td><td>Elliott</td><td>Lagosta, Romã</td><td>Lula</td></tr>
+                                <tr><td>11</td><td>Jodi</td><td>Diamante, Bolo de chocolate</td><td>Ovo (Nulo)</td></tr>
+                                <tr><td>13</td><td>Abigail</td><td>Ametista, Abóbora</td><td>Quartzo</td></tr>
+                                <tr><td>15</td><td>Sandy</td><td>Narciso</td><td>Quartzo</td></tr>
+                                <tr><td>18</td><td>Marnie</td><td>Diamante, Bolo rosa</td><td>Quartzo</td></tr>
+                                <tr><td>21</td><td>Robin</td><td>Espaguete, Pêssego</td><td>Quartzo</td></tr>
+                                <tr><td>24</td><td>George</td><td>Alho-poró</td><td>Narciso</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block events-block">
+                    <h3>🎉 Eventos da Estação</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Evento</th>
+                                    <th>Tema</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>8-11</td><td>Coleta de Amoras</td><td>Coleta</td></tr>
+                                <tr><td>16</td><td>Feira do Vale Stardew</td><td>Minigames</td></tr>
+                                <tr><td>27</td><td>Véspera dos Espíritos</td><td>Halloween</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block fish-block">
+                    <h3>🐟 Peixes do Outono</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Peixe</th>
+                                    <th>Horário</th>
+                                    <th>Clima</th>
+                                    <th>Lugar</th>
+                                    <th>Gold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Anchova</td><td>-</td><td>-</td><td>Oceano</td><td>45~90</td></tr>
+                                <tr><td>Sardinha</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>60~120</td></tr>
+                                <tr><td>Achigã-pequeno</td><td>-</td><td>-</td><td>Cidade, Lago</td><td>75~150</td></tr>
+                                <tr><td>Salmão</td><td>6h-19h</td><td>-</td><td>Rio</td><td>112~225</td></tr>
+                                <tr><td>Picão-verde</td><td>12h-2h</td><td>Chuva</td><td>Rio, Floresta</td><td>157~315</td></tr>
+                                <tr><td>Bagre</td><td>6h-00h</td><td>Chuva</td><td>Rio, Floresta Secreta, Pântano</td><td>300~600</td></tr>
+                                <tr><td>Enguia</td><td>16h-2h</td><td>Chuva</td><td>Oceano</td><td>127~255</td></tr>
+                                <tr><td>Cioba</td><td>6h-19h</td><td>Chuva</td><td>Oceano</td><td>75~150</td></tr>
+                                <tr><td>Pepino-do-mar</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>112~225</td></tr>
+                                <tr><td>Super-Pepino</td><td>18h-2h</td><td>-</td><td>Oceano</td><td>375~750</td></tr>
+                                <tr><td>Salmão Híbrido</td><td>6h-19h</td><td>-</td><td>Cidade, Floresta</td><td>225~450</td></tr>
+                                <tr><td>Tilápia</td><td>6h-14h</td><td>-</td><td>Oceano, Montanha</td><td>112~225</td></tr>
+                                <tr><td>Albacora</td><td>6h-11h / 18h-2h</td><td>-</td><td>Oceano</td><td>112~225</td></tr>
+                                <tr><td>Carpa da Meia-Noite</td><td>22h-2h</td><td>-</td><td>Montanha, Floresta</td><td>225~450</td></tr>
+                                <tr><td>Alocine</td><td>9h-2h</td><td>Chuva</td><td>Rio</td><td>90~180</td></tr>
+                                <tr><td>Carpa</td><td>-</td><td>-</td><td>Montanha, Floresta Secreta, Esgoto</td><td>45~90</td></tr>
+                                <tr><td>Tamboril</td><td>-</td><td>-</td><td>Rio Acima Mercado Joja</td><td>1,3k~2,7k</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INVERNO -->
+            <section id="winter" class="season-section">
+                <h2 class="section-title">❄️ Inverno</h2>
+                
+                <div class="content-block birthdays-block">
+                    <h3>🎁 Aniversários e Presentes dos NPCs</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>NPC</th>
+                                    <th>O que Ama (❤️)</th>
+                                    <th>O que Gosta (👍)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Krobus</td><td>Abóbora, Ovo nulo</td><td>Quartzo</td></tr>
+                                <tr><td>3</td><td>Linus</td><td>Inhame, Coco</td><td>Coletas</td></tr>
+                                <tr><td>7</td><td>Caroline</td><td>Flor-Miçanga, Chá verde</td><td>Narciso, Raiz-forte</td></tr>
+                                <tr><td>10</td><td>Sebastian</td><td>Lágrima Congelada</td><td>Quartzo</td></tr>
+                                <tr><td>14</td><td>Harvey</td><td>Café, Picles</td><td>Quartzo, Coletas</td></tr>
+                                <tr><td>17</td><td>Feiticeiro</td><td>Essência solar, Essência do Vazio</td><td>Quartzo</td></tr>
+                                <tr><td>20</td><td>Evelyn</td><td>Beterraba, Diamante</td><td>Óculos quebrados</td></tr>
+                                <tr><td>23</td><td>Leah</td><td>Refogado, Trufa</td><td>Coletas, Madeira flutuante</td></tr>
+                                <tr><td>26</td><td>Clint</td><td>Gemas raras, Barra de Ouro</td><td>Barra de Cobre e Ferro</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block events-block">
+                    <h3>🎉 Eventos da Estação</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Evento</th>
+                                    <th>Tema</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>8</td><td>Festival do Gelo</td><td>Pesca</td></tr>
+                                <tr><td>12-13</td><td>Festival da Lula</td><td>Pesca</td></tr>
+                                <tr><td>15-17</td><td>Mercado Noturno</td><td>Compras</td></tr>
+                                <tr><td>25</td><td>Festival da Estrela Invernal</td><td>Natal</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block fish-block">
+                    <h3>🐟 Peixes do Inverno</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Peixe</th>
+                                    <th>Horário</th>
+                                    <th>Clima</th>
+                                    <th>Lugar</th>
+                                    <th>Gold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Atum</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>150~300</td></tr>
+                                <tr><td>Perca</td><td>-</td><td>-</td><td>Cidade, Floresta, Montanha</td><td>82~165</td></tr>
+                                <tr><td>Sardinha</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>60~120</td></tr>
+                                <tr><td>Lúcio</td><td>-</td><td>-</td><td>Rio, Floresta</td><td>150~300</td></tr>
+                                <tr><td>Salmonete</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>112~225</td></tr>
+                                <tr><td>Arenque</td><td>-</td><td>-</td><td>Oceano</td><td>45~90</td></tr>
+                                <tr><td>Lula</td><td>18h-2h</td><td>-</td><td>Oceano</td><td>120~240</td></tr>
+                                <tr><td>Pepino-do-mar</td><td>6h-19h</td><td>-</td><td>Oceano</td><td>112~225</td></tr>
+                                <tr><td>Esturjão</td><td>6h-19h</td><td>-</td><td>Montanha</td><td>300~600</td></tr>
+                                <tr><td>Salmão Híbrido</td><td>6h-19h</td><td>-</td><td>Cidade, Floresta</td><td>225~450</td></tr>
+                                <tr><td>Albacora</td><td>6h-11h / 18h-2h</td><td>-</td><td>Oceano</td><td>112~225</td></tr>
+                                <tr><td>Ófis</td><td>-</td><td>-</td><td>Cidade, Floresta, Montanha</td><td>180~360 (1k~2k)</td></tr>
+                                <tr><td>Cioba</td><td>6h-19h</td><td>Chuva</td><td>Oceano</td><td>75~150</td></tr>
+                                <tr><td>Halibute</td><td>6h-11h / 19h-2h</td><td>-</td><td>Oceano, Montanha</td><td>120~240</td></tr>
+                                <tr><td>Carpa da Meia-Noite</td><td>22h-2h</td><td>-</td><td>Montanha, Floresta</td><td>225~450</td></tr>
+                                <tr><td>Carpa</td><td>-</td><td>-</td><td>Montanha, Floresta Secreta, Esgoto</td><td>45~90</td></tr>
+                                <tr><td>Peixe-gelo</td><td>-</td><td>-</td><td>Sul da Floresta</td><td>1,5k~3k</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MINAS & DESERTO -->
+            <section id="extra" class="season-section">
+                <h2 class="section-title">⛏️ Minas & Deserto</h2>
+                
+                <div class="content-block fish-block">
+                    <h3>👻 Peixes das Minas</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Peixe</th>
+                                    <th>Horário</th>
+                                    <th>Clima</th>
+                                    <th>Lugar</th>
+                                    <th>Gold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Peixe-fantasma</td><td>-</td><td>-</td><td>Mina - Andar 20, 60</td><td>67~135</td></tr>
+                                <tr><td>Peixe-pedra</td><td>-</td><td>-</td><td>Mina - Andar 20</td><td>450~900</td></tr>
+                                <tr><td>Chione</td><td>-</td><td>-</td><td>Mina - Andar 60</td><td>750~1,5k</td></tr>
+                                <tr><td>Enguia de lava</td><td>-</td><td>-</td><td>Mina - Andar 100</td><td>1k~2,1k</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-block fish-block">
+                    <h3>🏜️ Peixes do Deserto</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Peixe</th>
+                                    <th>Horário</th>
+                                    <th>Clima</th>
+                                    <th>Lugar</th>
+                                    <th>Gold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Areinha</td><td>6h-19h</td><td>-</td><td>Lago do Deserto</td><td>112~225</td></tr>
+                                <tr><td>Carpa Escorpião</td><td>6h-19h</td><td>-</td><td>Lago do Deserto</td><td>225~450</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESUMO -->
+            <section id="resumo" class="season-section">
+                <h2 class="section-title">📋 Resumo por Estação</h2>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h4>🌱 Primavera</h4>
+                        <p><strong>Aniversários:</strong> Kent (4), Lewis (7), Vincent (10), Haley (14), Pam (18), Shane (20), Pierre (26), Emily (27).</p>
+                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Cidade, Montanha, Floresta Secreta, Pântano.</p>
+                    </div>
+                    <div class="summary-card">
+                        <h4>☀️ Verão</h4>
+                        <p><strong>Aniversários:</strong> Jas (4), Gus (8), Maru (10), Alex (13), Sam (17), Demetrius (19), Anão (22), Willy (24), Leo (26).</p>
+                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Montanha, Floresta, Leste da Praia.</p>
+                    </div>
+                    <div class="summary-card">
+                        <h4>🍂 Outono</h4>
+                        <p><strong>Aniversários:</strong> Penny (2), Elliott (5), Jodi (11), Abigail (13), Sandy (15), Marnie (18), Robin (21), George (24).</p>
+                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Cidade, Montanha, Floresta, Rio Acima (Mercado Joja).</p>
+                    </div>
+                    <div class="summary-card">
+                        <h4>❄️ Inverno</h4>
+                        <p><strong>Aniversários:</strong> Krobus (1), Linus (3), Caroline (7), Sebastian (10), Harvey (14), Feiticeiro (17), Evelyn (20), Leah (23), Clint (26).</p>
+                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Montanha, Sul da Floresta, Minas (Andares 20, 60, 100).</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="wiki-footer">
+            <p>Stardew Valley Wiki Style &bull; Criado com carinho para fazendeiros 🌾</p>
+        </footer>
+    </div>
+
+    <script src="estacoes.js"></script>
+</body>
+</html>
