@@ -1,4 +1,4 @@
-// Função para alternar entre as abas das estações com salvamento no localStorage
+// Função para alternar entre as abas das estações com salvamento próprio
 function switchTab(tabId, save = true) {
     const sections = document.querySelectorAll('.season-section');
     sections.forEach(sec => sec.classList.remove('active'));
@@ -17,12 +17,16 @@ function switchTab(tabId, save = true) {
     }
 
     if (save) {
-        localStorage.setItem('stardew_active_tab', tabId);
+        localStorage.setItem('stardew_season_tab', tabId);
     }
+
+    // Reaplica o filtro atual assim que a aba muda
+    const currentFilter = localStorage.getItem('stardew_season_filter') || 'all';
+    filterContent(currentFilter, false);
 }
 
 // Função para filtrar o conteúdo dentro das estações (Tudo, Aniversários, Eventos, Peixes)
-function filterContent(filterType) {
+function filterContent(filterType, save = true) {
     const filterButtons = document.querySelectorAll('.content-filter-bar .filter-btn');
     filterButtons.forEach(btn => btn.classList.remove('active'));
 
@@ -31,13 +35,17 @@ function filterContent(filterType) {
         activeFilterBtn.classList.add('active');
     }
 
-    // Seleciona todas as seções de estações ativas e seus blocos internos
+    if (save) {
+        localStorage.setItem('stardew_season_filter', filterType);
+    }
+
+    // Seleciona a seção de estação ativa e seus blocos internos
     const activeSection = document.querySelector('.season-section.active');
     if (!activeSection) return;
 
     const blocks = activeSection.querySelectorAll('.content-block');
     
-    // Se estiver na aba de "Resumo", exibe normalmente (resumo não tem blocos divididos dessa forma)
+    // Se estiver na aba de "Resumo", exibe normalmente
     if (activeSection.id === 'resumo') return;
 
     blocks.forEach(block => {
@@ -55,10 +63,25 @@ function filterContent(filterType) {
     });
 }
 
-// Ao carregar a página, verifica se há aba salva no localStorage
+// Ao carregar a página, restaura a última estação e o último filtro utilizados
 window.addEventListener('DOMContentLoaded', () => {
-    const savedTab = localStorage.getItem('stardew_active_tab');
-    if (savedTab) {
+    const savedTab = localStorage.getItem('stardew_season_tab');
+    const savedFilter = localStorage.getItem('stardew_season_filter');
+
+    // Se houver uma aba salva, carrega ela; senão, pega a primeira disponível
+    if (savedTab && document.getElementById(savedTab)) {
         switchTab(savedTab, false);
+    } else {
+        const firstTabBtn = document.querySelector('.wiki-nav .tab-btn');
+        if (firstTabBtn) {
+            switchTab(firstTabBtn.getAttribute('data-tab'), false);
+        }
+    }
+
+    // Aplica o filtro salvo (ou 'all' por padrão)
+    if (savedFilter) {
+        filterContent(savedFilter, false);
+    } else {
+        filterContent('all', false);
     }
 });
