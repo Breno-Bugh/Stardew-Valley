@@ -1,8 +1,21 @@
+/* Estilo Stardew Valley Wiki */
 :root {
     --wiki-bg: #1c3b57;
+    --wiki-card-bg: #ffffff;
     --wiki-header-bg: #4b7f52;
+    --wiki-header-text: #ffffff;
     --wiki-text: #222222;
     --wiki-border: #b0c4de;
+    
+    /* Cores das categorias exatas conforme solicitado */
+    --cor-vermelho: #db6969;
+    --cor-verde: #89c792; /* Verde um pouco mais escuro para melhor legibilidade */
+    --cor-laranja: #cea21d;
+    --cor-marrom: #8c5d3b;
+    --cor-cinza: #6b7c8e;
+    --cor-dourado: rgb(221, 191, 23);
+    --cor-azul-claro: #caedfb;
+    --cor-azul: #202975;
 }
 
 * {
@@ -16,7 +29,25 @@ body {
     color: var(--wiki-text);
     background-color: var(--wiki-bg);
     min-height: 100vh;
+    position: relative;
     padding: 20px;
+}
+
+/* Wallpaper de fundo do Stardew Valley aplicado diretamente no body e com fallback fixo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://image.api.playstation.com/vulcan/img/rnd/202010/1520/yPmlPNe9extT2AVsv90hOKmn.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.35;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .wallpaper-bg {
@@ -25,10 +56,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://image.api.playstation.com/vulcan/img/rnd/202010/1520/yPmlPNe9extT2AVsv90hOKmn.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('https://image.api.playstation.com/vulcan/img/rnd/202010/1520/yPmlPNe9extT2AVsv90hOKmn.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     opacity: 0.35;
     z-index: -1;
 }
@@ -43,7 +74,7 @@ body {
     border: 3px solid #355c7d;
 }
 
-/* Navbar Superior */
+/* Nova Navbar Superior */
 .top-main-nav {
     background-color: #152d42;
     display: flex;
@@ -66,6 +97,7 @@ body {
     text-decoration: underline;
 }
 
+/* Header Wiki */
 .wiki-header {
     background: linear-gradient(135deg, #2b5270, #1c3b57);
     color: white;
@@ -85,13 +117,13 @@ body {
     opacity: 0.9;
 }
 
-/* Navegação por Categorias do Centro Comunitário */
+/* Navegação por Abas */
 .wiki-nav {
     display: flex;
     justify-content: center;
     background-color: #e2edf5;
     padding: 12px;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
     border-bottom: 2px solid var(--wiki-border);
 }
@@ -100,12 +132,12 @@ body {
     background-color: white;
     border: 2px solid #5b7c99;
     color: #2b5270;
-    padding: 6px 14px;
+    padding: 8px 18px;
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
 }
 
 .tab-btn:hover, .tab-btn.active {
@@ -114,16 +146,14 @@ body {
     border-color: #385e3d;
 }
 
-.content-section {
-    padding: 30px;
-}
-
-/* Seções por Categoria com Cores Personalizadas via Variáveis CSS */
-.category-section {
+/* Seções */
+.season-section {
     display: none;
+    padding: 30px;
+    background-color: #ffffff;
 }
 
-.category-section.active {
+.season-section.active {
     display: block;
     animation: fadeIn 0.4s ease-in-out;
 }
@@ -135,124 +165,160 @@ body {
 
 .section-title {
     background-color: var(--wiki-header-bg);
-    color: white;
+    color: var(--wiki-header-text);
     padding: 10px 15px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     border-radius: 6px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Joja Abandonada (Fundo azul escuro) */
-#joja.category-section {
-    background-color: #1e3a8a;
-    padding: 20px;
+/* Grid de Conjuntos */
+.bundles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.bundle-card {
+    background: #f9fbfc;
+    border: 2px solid var(--wiki-border);
     border-radius: 8px;
-}
-#joja .section-title {
-    background-color: #0f172a;
-    color: #ffffff;
-}
-#joja .bundle-card {
-    background-color: #1d4ed8;
-    border-color: #60a5fa;
-    color: #ffffff;
-}
-#joja .bundle-title {
-    color: #ffffff;
-}
-#joja .item-checkbox-label {
-    background-color: #2563eb;
-    border-color: #60a5fa;
-    color: #ffffff;
-}
-#joja .item-checkbox-label:hover {
-    background-color: #3b82f6;
-}
-#joja .item-checkbox-label input:checked + span {
-    color: #cbd5e1;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Demais categorias usam a cor de fundo injetada no style inline da section */
-.category-section:not(#joja) .bundle-card {
-    background: var(--cat-color);
-    border: 2px solid var(--cat-border);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.bundle-card.completed {
-    border-color: #2e7d32 !important;
-    background-color: #e8f5e9 !important;
-}
-#joja .bundle-card.completed {
-    background-color: #065f46 !important;
-    border-color: #34d399 !important;
-}
-
+/* Cabeçalhos dos Cards com texto em branco */
 .bundle-header {
+    padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-    padding-bottom: 8px;
-}
-
-.bundle-title {
-    font-size: 1.1rem;
-    color: #1f2937;
-    font-weight: 800;
-}
-
-.bundle-status {
-    font-size: 0.8rem;
     font-weight: 700;
-    padding: 4px 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    color: #ffffff;
+}
+
+.bundle-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    border: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+/* Classes específicas de cores mapeadas corretamente para cada tipo de conjunto */
+
+.bg-vermelho { 
+    background-color: var(--cor-vermelho) !important; 
+    color: #ffffff !important; 
+}
+.bg-verde { 
+    background-color: var(--cor-verde) !important; 
+    color: #ffffff !important; 
+}
+.bg-laranja { 
+    background-color: var(--cor-laranja) !important; 
+    color: #ffffff !important; 
+}
+.bg-marrom { 
+    background-color: var(--cor-marrom) !important; 
+    color: #ffffff !important; 
+}
+.bg-cinza { 
+    background-color: var(--cor-cinza) !important; 
+    color: #ffffff !important; 
+}
+.bg-dourado { 
+    background-color: var(--cor-dourado) !important; 
+    color: #ffffff !important; 
+}
+.bg-azul-claro { 
+    background-color: var(--cor-azul-claro) !important; 
+    color: #ffffff !important; 
+}
+.bg-azul-escuro { 
+    background-color: var(--cor-azul) !important; /* Desaparecida usa o mesmo vermelho */
+    color: #ffffff !important; 
+}
+
+/* Status do Conjunto com texto em branco */
+.bundle-status {
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #ffffff !important;
+    padding: 3px 8px;
     border-radius: 4px;
-    background-color: rgba(0,0,0,0.1);
-    color: #374151;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.bundle-card.completed .bundle-status {
-    background-color: #2e7d32;
-    color: white;
+/* Listas de itens */
+.item-list {
+    list-style: none;
+    padding: 15px;
+    flex-grow: 1;
 }
 
-.items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 10px;
+.item-list li {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
 }
 
-.item-checkbox-label {
+.item-list label {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 8px 12px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 6px;
     cursor: pointer;
-    font-size: 0.88rem;
-    font-weight: 600;
-    transition: background 0.2s;
 }
 
-.item-checkbox-label:hover {
-    background-color: #ffffff;
-}
-
-.item-checkbox-label input {
+.item-checkbox {
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
 
-.item-checkbox-label input:checked + span {
-    text-decoration: line-through;
-    color: #9ca3af;
+/* Moeda do Jogo (G dourado estilizado) */
+.gold-coin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #ffeb3b 0%, #fbc02d 70%, #f57f17 100%);
+    border: 1px solid #c68400;
+    border-radius: 50%;
+    color: #5c3800;
+    font-weight: 800;
+    font-size: 0.7rem;
+    margin-left: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+}
+
+/* Seção de Recompensa */
+.reward {
+    background-color: #edf2f7;
+    border-top: 1px solid var(--wiki-border);
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    color: #2b5270;
+    font-weight: 600;
+}
+
+.season-badge {
+    font-size: 0.75rem;
+    color: #555555;
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 .wiki-footer {

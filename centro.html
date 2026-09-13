@@ -8,435 +8,888 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wallpaper-bg"></div>
     <div class="wiki-container">
         <!-- Navbar Superior -->
         <header class="top-main-nav">
-            <a href="estacoes.html">Estações</a>
-            <a href="centro.html">Centro Comunitário</a>
+            <a href="Estacoes.html">Estações</a>
+            <a href="centro.html" class="active-nav">Centro Comunitário</a>
             <a href="minas.html">Minas</a>
             <a href="construcoes.html">Construções</a>
         </header>
 
         <div class="wiki-header">
-            <h1>🏡 Stardew Valley - Centro Comunitário 🌽</h1>
-            <p>Guia Completo de Conjuntos e Checklist de Itens</p>
+            <h1>🏛️ Centro Comunitário 🍎</h1>
+            <p>Guia Completo dos Conjuntos e Recompensas</p>
         </div>
 
-        <!-- Abas de Categorias do Centro Comunitário -->
+        <!-- Abas do Centro Comunitário -->
         <nav class="wiki-nav">
-            <button onclick="switchCategory('planta')" class="tab-btn active" data-cat="planta">🌱 Planta</button>
-            <button onclick="switchCategory('animal')" class="tab-btn" data-cat="animal">🐮 Animal</button>
-            <button onclick="switchCategory('mineracao')" class="tab-btn" data-cat="mineracao">⛏️ Mineração</button>
-            <button onclick="switchCategory('artesanato')" class="tab-btn" data-cat="artesanato">🏺 Artesanato</button>
-            <button onclick="switchCategory('pesca')" class="tab-btn" data-cat="pesca">🎣 Pesca</button>
-            <button onclick="switchCategory('amizade')" class="tab-btn" data-cat="amizade">❤️ Amizade</button>
-            <button onclick="switchCategory('cofre')" class="tab-btn" data-cat="cofre">💰 Cofre</button>
-            <button onclick="switchCategory('joja')" class="tab-btn" data-cat="joja">🏢 Joja Abandonada</button>
+            <button onclick="switchTab('todos')" class="tab-btn active" data-tab="todos">🌐 Todos</button>
+            <button onclick="switchTab('restantes')" class="tab-btn" data-tab="restantes">⏳ Restantes</button>
+            <button onclick="switchTab('concluidos')" class="tab-btn" data-tab="concluidos">✅ Concluídos</button>
+            <button onclick="switchTab('plantacao')" class="tab-btn" data-tab="plantacao">🌾 Plantação</button>
+            <button onclick="switchTab('animal')" class="tab-btn" data-tab="animal">🐮 Animal</button>
+            <button onclick="switchTab('artesanato')" class="tab-btn" data-tab="artesanato">🏺 Artesanato</button>
+            <button onclick="switchTab('mineracao')" class="tab-btn" data-tab="mineracao">⛏️ Mineração</button>
+            <button onclick="switchTab('cofre')" class="tab-btn" data-tab="cofre">💰 Cofre</button>
+            <button onclick="switchTab('pesca')" class="tab-btn" data-tab="pesca">🐟 Pesca</button>
+            <button onclick="switchTab('amizade')" class="tab-btn" data-tab="amizade">❤️ Amizade</button>
+            <button onclick="switchTab('joja')" class="tab-btn" data-tab="joja">🛒 Joja</button>
         </nav>
 
-        <main class="content-section">
-            <!-- 1. PLANTA -->
-            <section id="planta" class="category-section active" style="--cat-color: #d4edda; --cat-border: #a3d9b1;">
-                <h2 class="section-title">🌱 Categoria: Planta</h2>
+        <main>
+            <!-- ABA TODOS -->
+            <section id="todos" class="season-section active">
+                <h2 class="section-title">🌐 Todas as Categorias do Centro Comunitário</h2>
+                
+                <div class="bundles-grid">
+                    <!-- RECURSOS (FORRAGEM) -->
+                    <div class="bundle-card" data-bundle="recursos-primavera" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌿 Conjunto Recursos de Primavera (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-prim-1"><span>1x Raiz-forte</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-prim-2"><span>1x Daffodil</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-prim-3"><span>1x Alho-poró</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-prim-4"><span>1x Dente-de-leão</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Sementes de Primavera</div>
+                    </div>
 
-                <div class="bundle-card" id="bundle-rec-primavera">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Recursos de Primavera (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="recursos-verao" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌿 Conjunto Recursos de Verão (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-ver-1"><span>1x Uva</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-ver-2"><span>1x Ervilha-de-cheiro</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-ver-3"><span>1x Ervilha</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Sementes de Verão</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-primavera" onchange="updateBundleStatus('rec-primavera')"><span>1x Narciso</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-primavera" onchange="updateBundleStatus('rec-primavera')"><span>1x Dente-de-leão</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-primavera" onchange="updateBundleStatus('rec-primavera')"><span>1x Alho-poró</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-primavera" onchange="updateBundleStatus('rec-primavera')"><span>1x Ervilha-de-cheiro</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-rec-verao">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Recursos de Verão (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="recursos-outono" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌿 Conjunto Recursos de Outono (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-out-1"><span>1x Avelã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-out-2"><span>1x Cogumelo comum</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-out-3"><span>1x Amora</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="rec-out-4"><span>1x Inhame selvagem</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Sementes de Inverno</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-verao" onchange="updateBundleStatus('rec-verao')"><span>1x Uva</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-verao" onchange="updateBundleStatus('rec-verao')"><span>1x Ameixa Selvagem</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-verao" onchange="updateBundleStatus('rec-verao')"><span>1x Ervilha-de-cheiro</span></label> <!-- Exemplo mantido do fluxo -->
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-verao" onchange="updateBundleStatus('rec-verao')"><span>1x Cacto</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-rec-outono">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Recursos de Outono (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="recursos-exotico" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌿 Conjunto Recursos Exóticos (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="exotico-1"><span>1x Coco</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="exotico-2"><span>1x Fruta de cacto</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="exotico-3"><span>1x Pinhão</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="exotico-4"><span>1x Carvalho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="exotico-5"><span>1x Xarope de Ácer</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="exotico-6"><span>1x Resina de carvalho</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Prato de Outono</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-outono" onchange="updateBundleStatus('rec-outono')"><span>1x Avelã</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-outono" onchange="updateBundleStatus('rec-outono')"><span>1x Cogumelo comum</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-outono" onchange="updateBundleStatus('rec-outono')"><span>1x Amora</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-outono" onchange="updateBundleStatus('rec-outono')"><span>1x Flor de Açafrão</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-rec-inverno">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Recursos de Inverno (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <!-- PLANTAÇÃO -->
+                    <div class="bundle-card" data-bundle="plantacao-primavera" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Primavera (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-1"><span>1x Chirívia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-2"><span>1x Vagem</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-3"><span>1x Couve-Flor</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-4"><span>1x Batata</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 20x Solo Foliar</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-inverno" onchange="updateBundleStatus('rec-inverno')"><span>1x Raiz-forte</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-inverno" onchange="updateBundleStatus('rec-inverno')"><span>1x Raiz de Inverno</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-inverno" onchange="updateBundleStatus('rec-inverno')"><span>1x Cristal da terra</span></label> <!-- Ajuste contextual -->
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-inverno" onchange="updateBundleStatus('rec-inverno')"><span>1x Inhame da neve</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-rec-exotico">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Recursos Exóticos (Precisa de 5)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="plantacao-verao" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Verão (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-1"><span>1x Tomate</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-2"><span>1x Pimenta</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-3"><span>1x Mirtilo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-4"><span>1x Melão</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Dessecador de Frutas</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Coco</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Fruta de Cristal</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Cogumelo Vermelho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Cogumelo Roxo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Xarope Ácer</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Resina de Carvalho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="rec-exotico" onchange="updateBundleStatus('rec-exotico')"><span>1x Alcatrão de Pinho</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-plant-primavera">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Plantação de Primavera (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="plantacao-outono" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Outono (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-1"><span>1x Milho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-2"><span>1x Berinjela</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-3"><span>1x Abóbora</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-4"><span>1x Inhame</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Apiário</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-primavera" onchange="updateBundleStatus('plant-primavera')"><span>1x Chirívia</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-primavera" onchange="updateBundleStatus('plant-primavera')"><span>1x Vagem</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-primavera" onchange="updateBundleStatus('plant-primavera')"><span>1x Batata</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-primavera" onchange="updateBundleStatus('plant-primavera')"><span>1x Couve-Flor</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-plant-verao">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Plantação de Verão (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="plantacao-qualidade" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Qualidade (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-1"><span>5x ⭐ Chirívia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-2"><span>5x ⭐ Melão</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-3"><span>5x ⭐ Abóbora</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-4"><span>5x ⭐ Milho</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Jarra de Conserva</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-verao" onchange="updateBundleStatus('plant-verao')"><span>1x Tomate</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-verao" onchange="updateBundleStatus('plant-verao')"><span>1x Pimenta</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-verao" onchange="updateBundleStatus('plant-verao')"><span>1x Melão</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-verao" onchange="updateBundleStatus('plant-verao')"><span>1x Mirtilo</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-plant-outono">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Plantação de Outono (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <!-- ANIMAL -->
+                    <div class="bundle-card" data-bundle="animal" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-laranja">
+                            <h3>🐮 Conjunto Animal (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-1"><span>1x Leite grande</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-2"><span>1x Ovo grande</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-3"><span>1x Ovo grande marrom</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-4"><span>1x Leite grande de cabra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-5"><span>1x Lã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-6"><span>1x Ovo de pata</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Prensa de Queijo</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-outono" onchange="updateBundleStatus('plant-outono')"><span>1x Milho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-outono" onchange="updateBundleStatus('plant-outono')"><span>1x Berinjela</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-outono" onchange="updateBundleStatus('plant-outono')"><span>1x Abóbora</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-outono" onchange="updateBundleStatus('plant-outono')"><span>1x Inhame</span></label>
-                    </div>
-                </div>
 
-                <div class="bundle-card" id="bundle-plant-qualidade">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Plantações de Qualidade (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <!-- ARTESANATO -->
+                    <div class="bundle-card" data-bundle="artesao" data-type="custom" data-required="6">
+                        <div class="bundle-header bg-marrom">
+                            <h3>🏺 Conjunto Artesanato (6)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-1"><span>1x Óleo de trufa</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-2"><span>1x Tecido</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-3"><span>1x Queijo de cabra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-4"><span>1x Queijo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-5"><span>1x Mel</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-6"><span>1x Geleia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-7"><span>1x Maçã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-8"><span>1x Damasco</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-9"><span>1x Laranja</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-10"><span>1x Pêssego</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-11"><span>1x Romã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-12"><span>1x Cereja</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Barril</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-qualidade" onchange="updateBundleStatus('plant-qualidade')"><span>5x ⭐ Chirívia</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-qualidade" onchange="updateBundleStatus('plant-qualidade')"><span>5x ⭐ Melão</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-qualidade" onchange="updateBundleStatus('plant-qualidade')"><span>5x ⭐ Abóbora</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="plant-qualidade" onchange="updateBundleStatus('plant-qualidade')"><span>5x ⭐ Milho</span></label>
+
+                    <!-- MINERAÇÃO -->
+                    <div class="bundle-card" data-bundle="ferreiro" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>⛏️ Conjunto de Ferreiro (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="ferreiro-1"><span>1x Barra de cobre</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="ferreiro-2"><span>1x Barra de ferro</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="ferreiro-3"><span>1x Barra de ouro</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Fornalha</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="construcao" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>🏗️ Conjunto Construção (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-1"><span>99x Madeira</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-2"><span>99x Madeira</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-3"><span>99x Pedra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-4"><span>10x Madeira de lei</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Carvoaria</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="geologo" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>💎 Conjunto de Geólogo (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-1"><span>1x Quartzo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-2"><span>1x Quartzo de fogo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-3"><span>1x Cristal da terra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-4"><span>1x Lágrima congelada</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Omnigeodo</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="aventureiro" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>⚔️ Conjunto de Aventureiro (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-1"><span>1x Essência solar</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-2"><span>1x Essência nula</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-3"><span>99x Gosma</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-4"><span>10x Asa de morcego</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Anel de Ímã Pequeno</div>
+                    </div>
+
+                    <!-- COFRE -->
+                    <div class="bundle-card" data-bundle="cofre" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 2.500 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-1"><span>2.500 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 3x Bolo de Chocolate</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="cofre-5000" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 5.000 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-2"><span>5.000 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Fertilizante de Qualidade</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="cofre-10000" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 10.000 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-3"><span>10.000 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Para-raios</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="cofre-25000" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 25.000 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-4"><span>25.000 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Cristalário</div>
+                    </div>
+
+                    <!-- PESCA -->
+                    <div class="bundle-card" data-bundle="pesca-rio" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🐟 Conjunto Peixes de Rio (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-1"><span>1x Peixe-sol</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-2"><span>1x Bagre</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-3"><span>1x Alocine</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-4"><span>1x Peixe-gato cabeçudo</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-5"><span>1x Salmão-híbrido</span></label><span class="season-badge">🍂 Outono, ❄️ Inverno</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-6"><span>1x Esturjão</span></label><span class="season-badge">☀️ Verão, ❄️ Inverno</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Isca</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="pesca-lago" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🌊 Conjunto Peixes de Lago (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-1"><span>1x Achigã</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-2"><span>1x Carpa</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-3"><span>1x Peixe-gato cabeçudo</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-4"><span>1x Esturjão</span></label><span class="season-badge">☀️ Verão, ❄️ Inverno</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Isca Artificial</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="pesca-oceano" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🐚 Conjunto Peixes de Oceano (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-1"><span>1x Sardinha</span></label><span class="season-badge">🌱 Primavera, 🍂 Outono, ❄️ Inverno</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-2"><span>1x Atum</span></label><span class="season-badge">☀️ Verão, ❄️ Inverno</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-3"><span>1x Cioba</span></label><span class="season-badge">☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-4"><span>1x Tilápia</span></label><span class="season-badge">☀️ Verão, 🍂 Outono</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Totem de Teletransporte: Praia</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="pesca-noturno" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🌙 Conjunto Pesca Noturna (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-noturno-1"><span>1x Picão-verde</span></label><span class="season-badge">🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-noturno-2"><span>1x Brema</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-noturno-3"><span>1x Enguia</span></label><span class="season-badge">🌱 Primavera, 🍂 Outono</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Anel de Brilho Pequeno</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="covo" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🦀 Conjunto Covo (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-1"><span>1x Lagosta (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-2"><span>1x Lagostim (Rios)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-3"><span>1x Caranguejo (Oceano e minas)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-4"><span>1x Berbigão (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-5"><span>1x Mexilhão (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-6"><span>1x Camarão (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-7"><span>1x Lesma (Rios)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-8"><span>1x Caramujo (Rios)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-9"><span>1x Ostra (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-10"><span>1x Concha (Oceano)</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 3x Covo</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="peixe-esp" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🐠 Conjunto Peixes Especializados (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-1"><span>1x Baiacu</span></label><span class="season-badge">☀️ Verão (Praia)</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-2"><span>1x Peixe-fantasma</span></label><span class="season-badge">🌐 Todas (Minas)</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-3"><span>1x Areinha</span></label><span class="season-badge">🌐 Todas (Deserto)</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-4"><span>1x Madeirão</span></label><span class="season-badge">🌐 Todas (Bosque)</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Prato do Mar</div>
+                    </div>
+
+                    <!-- AMIZADE -->
+                    <div class="bundle-card" data-bundle="cozinheiro" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🍲 Conjunto de Cozinheiro (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-1"><span>1x Xarope de Ácer</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-2"><span>1x Broto de samambaia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-3"><span>1x Trufa</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-4"><span>1x Papoula</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-5"><span>1x Hossomaki</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-6"><span>1x Ovo frito</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 3x Bolo Rosa</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="forragem" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🌿 Conjunto Forragem (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="forragem-1"><span>10x Trigo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="forragem-2"><span>10x Palha</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="forragem-3"><span>3x Maçã</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Aquecedor</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="encantador" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>✨ Conjunto de Encantador (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-1"><span>1x Resina de carvalho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-2"><span>1x Vinho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-3"><span>1x Pé de coelho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-4"><span>1x Romã</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Barra de Ouro</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="tinta" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🎨 Conjunto Tinta (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-1"><span>1x Cogumelo vermelho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-2"><span>1x Ouriço-do-mar</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-3"><span>1x Girassol</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-4"><span>1x Pena de pato</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-5"><span>1x Água-marina</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-6"><span>1x Repolho roxo</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Gerador de Sementes</div>
+                    </div>
+
+                    <div class="bundle-card" data-bundle="pesquisa" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🔍 Conjunto Pesquisa de campo (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-1"><span>1x Cogumelo roxo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-2"><span>1x Concha de náutilo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-3"><span>1x Esquálio</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-4"><span>1x Geodo congelado</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Máquina de Reciclagem</div>
+                    </div>
+
+                    <!-- JOJA -->
+                    <div class="bundle-card" data-bundle="joja" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-azul-escuro">
+                            <h3>🛒 Conjunto A Desaparecida (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-1"><span>1x Vinho ⭐Prata</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-2"><span>1x Maionese de dinossauro</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-3"><span>1x Fragmento prismático</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-4"><span>5x ⭐ Fruta antiga</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-5"><span>1x ⭐ Salmão nulo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-6"><span>1x Caviar</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> Cinema</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. ANIMAL -->
-            <section id="animal" class="category-section" style="--cat-color: #ffe5d0; --cat-border: #f3b07c;">
-                <h2 class="section-title">🐮 Categoria: Animal</h2>
-
-                <div class="bundle-card" id="bundle-animal">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Conjunto Animal (Precisa de 5)</span>
-                        <span class="bundle-status">Pendente</span>
+            <!-- ABA PLANTAÇÃO -->
+            <section id="plantacao" class="season-section">
+                <h2 class="section-title">🌾 Plantação</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="plantacao-primavera" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Primavera (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-1"><span>1x Chirívia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-2"><span>1x Vagem</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-3"><span>1x Couve-Flor</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-primavera-4"><span>1x Batata</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 20x Solo Foliar</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="animal" onchange="updateBundleStatus('animal')"><span>1x Leite grande</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="animal" onchange="updateBundleStatus('animal')"><span>1x Ovo grande</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="animal" onchange="updateBundleStatus('animal')"><span>1x Ovo grande Marrom</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="animal" onchange="updateBundleStatus('animal')"><span>1x Leite G de cabra</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="animal" onchange="updateBundleStatus('animal')"><span>1x Lã</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="animal" onchange="updateBundleStatus('animal')"><span>1x Ovo de pata</span></label>
+                    <div class="bundle-card" data-bundle="plantacao-verao" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Verão (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-1"><span>1x Tomate</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-2"><span>1x Pimenta</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-3"><span>1x Mirtilo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-verao-4"><span>1x Melão</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Dessecador de Frutas</div>
                     </div>
-                </div>
-            </section>
-
-            <!-- 3. MINERAÇÃO -->
-            <section id="mineracao" class="category-section" style="--cat-color: #e2e8f0; --cat-border: #cbd5e1;">
-                <h2 class="section-title">⛏️ Categoria: Mineração</h2>
-
-                <div class="bundle-card" id="bundle-ferreiro">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Ferreiro (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="plantacao-outono" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Outono (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-1"><span>1x Milho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-2"><span>1x Berinjela</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-3"><span>1x Abóbora</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-outono-4"><span>1x Inhame</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Apiário</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="ferreiro" onchange="updateBundleStatus('ferreiro')"><span>1x Barra de Cobre</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="ferreiro" onchange="updateBundleStatus('ferreiro')"><span>1x Barra de Ferro</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="ferreiro" onchange="updateBundleStatus('ferreiro')"><span>1x Barra de Ouro</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-geologo">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Geólogo (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="geologo" onchange="updateBundleStatus('geologo')"><span>1x Quartzo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="geologo" onchange="updateBundleStatus('geologo')"><span>1x Quartzo de fogo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="geologo" onchange="updateBundleStatus('geologo')"><span>1x Cristal da terra</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="geologo" onchange="updateBundleStatus('geologo')"><span>1x Lágrima congelada</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-aventureiro">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Aventureiro (Precisa de 2)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="aventureiro" onchange="updateBundleStatus('aventureiro')"><span>1x Essência solar</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="aventureiro" onchange="updateBundleStatus('aventureiro')"><span>1x Essência do Vazio</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="aventureiro" onchange="updateBundleStatus('aventureiro')"><span>99x Gosma</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="aventureiro" onchange="updateBundleStatus('aventureiro')"><span>10x Asa de morcego</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-construcao-minas">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Construção das Minas (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="construcao-minas" onchange="updateBundleStatus('construcao-minas')"><span>198x Madeira</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="construcao-minas" onchange="updateBundleStatus('construcao-minas')"><span>99x Pedra</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="construcao-minas" onchange="updateBundleStatus('construcao-minas')"><span>10x Madeira de lei</span></label>
+                    <div class="bundle-card" data-bundle="plantacao-qualidade" data-type="all">
+                        <div class="bundle-header bg-verde">
+                            <h3>🌾 Conjunto Plantações de Qualidade (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-1"><span>5x ⭐ Chirívia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-2"><span>5x ⭐ Melão</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-3"><span>5x ⭐ Abóbora</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="plantacao-qualidade-4"><span>5x ⭐ Milho</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Jarra de Conserva</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 4. ARTESANATO -->
-            <section id="artesanato" class="category-section" style="--cat-color: #f5e6d3; --cat-border: #d4b28c;">
-                <h2 class="section-title">🏺 Categoria: Artesanato</h2>
-
-                <div class="bundle-card" id="bundle-artesao">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Artesão (Precisa de 6)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Óleo de trufa</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Tecido</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Queijo de Cabra</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Queijo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Mel</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Geleia</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Maçã</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Damasco</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Laranja</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Pêssego</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Romã</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="artesao" onchange="updateBundleStatus('artesao')"><span>1x Cereja</span></label>
+            <!-- ABA ANIMAL -->
+            <section id="animal" class="season-section">
+                <h2 class="section-title">🐮 Animal</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="animal" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-laranja">
+                            <h3>🐮 Conjunto Animal (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-1"><span>1x Leite grande</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-2"><span>1x Ovo grande</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-3"><span>1x Ovo grande marrom</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-4"><span>1x Leite grande de cabra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-5"><span>1x Lã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="animal-6"><span>1x Ovo de pata</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Prensa de Queijo</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 5. PESCA -->
-            <section id="pesca" class="category-section" style="--cat-color: #dbeafe; --cat-border: #93c5fd;">
-                <h2 class="section-title">🎣 Categoria: Pesca</h2>
-
-                <div class="bundle-card" id="bundle-peixe-rio">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Peixe de Rio (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-rio" onchange="updateBundleStatus('peixe-rio')"><span>1x Peixe-sol</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-rio" onchange="updateBundleStatus('peixe-rio')"><span>1x Achigã-pequeno</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-rio" onchange="updateBundleStatus('peixe-rio')"><span>1x Bagre</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-rio" onchange="updateBundleStatus('peixe-rio')"><span>1x Carpa</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-rio" onchange="updateBundleStatus('peixe-rio')"><span>1x Alocine</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-peixe-lago">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Peixe de Lago (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-lago" onchange="updateBundleStatus('peixe-lago')"><span>1x Perca-cabeçuda</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-lago" onchange="updateBundleStatus('peixe-lago')"><span>1x Salmão-Híbrido</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-lago" onchange="updateBundleStatus('peixe-lago')"><span>1x Esturjão</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-peixe-oceano">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Peixe de Oceano (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Sardinha</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Picão-verde</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Atum</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Brema</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Cioba</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Enguia</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="peixe-oceano" onchange="updateBundleStatus('peixe-oceano')"><span>1x Tilápia</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-covo">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Covo (Precisa de 5)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Lagosta</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Lagostim</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Caranguejo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Berbigão</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Mexilhão</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Camarão</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Lesma</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Caramujo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Ostra</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="covo" onchange="updateBundleStatus('covo')"><span>1x Concha</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-especiais-pesca">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Especiais de Pesca (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="especiais-pesca" onchange="updateBundleStatus('especiais-pesca')"><span>1x Baiacu</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="especiais-pesca" onchange="updateBundleStatus('especiais-pesca')"><span>1x Peixe-Fantasma</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="especiais-pesca" onchange="updateBundleStatus('especiais-pesca')"><span>1x Areinha</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="especiais-pesca" onchange="updateBundleStatus('especiais-pesca')"><span>1x Madeirão</span></label>
+            <!-- ABA ARTESANATO -->
+            <section id="artesanato" class="season-section">
+                <h2 class="section-title">🏺 Artesanato</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="artesao" data-type="custom" data-required="6">
+                        <div class="bundle-header bg-marrom">
+                            <h3>🏺 Conjunto Artesanato (6)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-1"><span>1x Óleo de trufa</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-2"><span>1x Tecido</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-3"><span>1x Queijo de cabra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-4"><span>1x Queijo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-5"><span>1x Mel</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-6"><span>1x Geleia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-7"><span>1x Maçã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-8"><span>1x Damasco</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-9"><span>1x Laranja</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-10"><span>1x Pêssego</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-11"><span>1x Romã</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="artesao-12"><span>1x Cereja</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Barril</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 6. AMIZADE -->
-            <section id="amizade" class="category-section" style="--cat-color: #fde8e8; --cat-border: #f8b4b4;">
-                <h2 class="section-title">❤️ Categoria: Amizade</h2>
-
-                <div class="bundle-card" id="bundle-cozinheiro">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Cozinheiro (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+            <!-- ABA MINERAÇÃO -->
+            <section id="mineracao" class="season-section">
+                <h2 class="section-title">⛏️ Mineração</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="ferreiro" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>⛏️ Conjunto de Ferreiro (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="ferreiro-1"><span>1x Barra de cobre</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="ferreiro-2"><span>1x Barra de ferro</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="ferreiro-3"><span>1x Barra de ouro</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Fornalha</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>1x Xarope Ácer</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>10x Trigo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>1x Broto de Samambaia</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>10x Palha</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>1x Trufa</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>3x Maçã</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>1x Papoula</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>1x Hossomaki</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cozinheiro" onchange="updateBundleStatus('cozinheiro')"><span>1x Ovo Frito</span></label>
+                    <div class="bundle-card" data-bundle="construcao" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>🏗️ Conjunto Construção (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-1"><span>99x Madeira</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-2"><span>99x Madeira</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-3"><span>99x Pedra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="construcao-4"><span>10x Madeira de lei</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Carvoaria</div>
                     </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-forragem">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Forragem (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
+                    <div class="bundle-card" data-bundle="geologo" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>💎 Conjunto de Geólogo (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-1"><span>1x Quartzo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-2"><span>1x Quartzo de fogo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-3"><span>1x Cristal da terra</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="geologo-4"><span>1x Lágrima congelada</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Omnigeodo</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Resina de Carvalho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Vinho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Pé de coelho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Cogumelo Vermelho</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Romã</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Ouriço-do-mar</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Girassol</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Pena de pato</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Cogumelo Roxo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Água-marina</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Concha de náutilo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="forragem" onchange="updateBundleStatus('forragem')"><span>1x Repolho roxo</span></label>
-                    </div>
-                </div>
-
-                <div class="bundle-card" id="bundle-pesquisa-campo">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Pesquisa de Campo (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="pesquisa-campo" onchange="updateBundleStatus('pesquisa-campo')"><span>1x Esquálio</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="pesquisa-campo" onchange="updateBundleStatus('pesquisa-campo')"><span>1x Geodo congelado</span></label>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 7. COFRE -->
-            <section id="cofre" class="category-section" style="--cat-color: #fef3c7; --cat-border: #fcd34d;">
-                <h2 class="section-title">💰 Categoria: Cofre</h2>
-
-                <div class="bundle-card" id="bundle-cofre">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Cofre - Investimentos em Dinheiro (Todos)</span>
-                        <span class="bundle-status">Pendente</span>
-                    </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cofre" onchange="updateBundleStatus('cofre')"><span>2.500g Dinheiro</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cofre" onchange="updateBundleStatus('cofre')"><span>500g Dinheiro</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cofre" onchange="updateBundleStatus('cofre')"><span>10.000g Dinheiro</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="cofre" onchange="updateBundleStatus('cofre')"><span>25.000g Dinheiro</span></label>
+                    <div class="bundle-card" data-bundle="aventureiro" data-type="all">
+                        <div class="bundle-header bg-cinza">
+                            <h3>⚔️ Conjunto de Aventureiro (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-1"><span>1x Essência solar</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-2"><span>1x Essência nula</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-3"><span>99x Gosma</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="aventureiro-4"><span>10x Asa de morcego</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Anel de Ímã Pequeno</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 8. JOJA ABANDONADA -->
-            <section id="joja" class="category-section" style="--cat-color: #1e3a8a; --cat-border: #3b82f6; --text-color: #ffffff;">
-                <h2 class="section-title text-white">🏢 Categoria: Joja Abandonada</h2>
-
-                <div class="bundle-card" id="bundle-joja">
-                    <div class="bundle-header">
-                        <span class="bundle-title">Conjunto Desaparecida (Precisa de 5)</span>
-                        <span class="bundle-status">Pendente</span>
+            <!-- ABA COFRE -->
+            <section id="cofre" class="season-section">
+                <h2 class="section-title">💰 Cofre</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="cofre" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 2.500 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-1"><span>2.500 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 3x Bolo de Chocolate</div>
                     </div>
-                    <div class="items-grid">
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="joja" onchange="updateBundleStatus('joja')"><span>1x Vinho (prata)</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="joja" onchange="updateBundleStatus('joja')"><span>1x Maionese de Dinossauro</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="joja" onchange="updateBundleStatus('joja')"><span>1x Fragmento Prismático</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="joja" onchange="updateBundleStatus('joja')"><span>5x ⭐ Fruta antiga</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="joja" onchange="updateBundleStatus('joja')"><span>1x ⭐ Salmão nulo</span></label>
-                        <label class="item-checkbox-label"><input type="checkbox" data-bundle="joja" onchange="updateBundleStatus('joja')"><span>1x Caviar</span></label>
+                    <div class="bundle-card" data-bundle="cofre-5000" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 5.000 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-2"><span>5.000 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Fertilizante de Qualidade</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="cofre-10000" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 10.000 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-3"><span>10.000 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Para-raios</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="cofre-25000" data-type="all">
+                        <div class="bundle-header bg-dourado">
+                            <h3>💰 Conjunto 25.000 ouros (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cofre-4"><span>25.000 <span class="gold-coin">🪙</span></span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Cristalário</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA PESCA -->
+            <section id="pesca" class="season-section">
+                <h2 class="section-title">🐟 Pesca</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="pesca-rio" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🐟 Conjunto Peixes de Rio (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-1"><span>1x Peixe-sol</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-2"><span>1x Bagre</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-3"><span>1x Alocine</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-4"><span>1x Peixe-gato cabeçudo</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-5"><span>1x Salmão-híbrido</span></label><span class="season-badge">🍂 Outono, ❄️ Inverno</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-rio-6"><span>1x Esturjão</span></label><span class="season-badge">☀️ Verão, ❄️ Inverno</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 30x Isca</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="pesca-lago" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🌊 Conjunto Peixes de Lago (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-1"><span>1x Achigã</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-2"><span>1x Carpa</span></label><span class="season-badge">🌱 Primavera, ☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-3"><span>1x Peixe-gato cabeçudo</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-lago-4"><span>1x Esturjão</span></label><span class="season-badge">☀️ Verão, ❄️ Inverno</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Isca Artificial</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="pesca-oceano" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🐚 Conjunto Peixes de Oceano (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-1"><span>1x Sardinha</span></label><span class="season-badge">🌱 Primavera, 🍂 Outono, ❄️ Inverno</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-2"><span>1x Atum</span></label><span class="season-badge">☀️ Verão, ❄️ Inverno</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-3"><span>1x Cioba</span></label><span class="season-badge">☀️ Verão, 🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-oceano-4"><span>1x Tilápia</span></label><span class="season-badge">☀️ Verão, 🍂 Outono</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Totem de Teletransporte: Praia</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="pesca-noturno" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🌙 Conjunto Pesca Noturna (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-noturno-1"><span>1x Picão-verde</span></label><span class="season-badge">🍂 Outono</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-noturno-2"><span>1x Brema</span></label><span class="season-badge">🌐 Todas</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesca-noturno-3"><span>1x Enguia</span></label><span class="season-badge">🌱 Primavera, 🍂 Outono</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Anel de Brilho Pequeno</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="covo" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🦀 Conjunto Covo (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-1"><span>1x Lagosta (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-2"><span>1x Lagostim (Rios)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-3"><span>1x Caranguejo (Oceano e minas)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-4"><span>1x Berbigão (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-5"><span>1x Mexilhão (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-6"><span>1x Camarão (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-7"><span>1x Lesma (Rios)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-8"><span>1x Caramujo (Rios)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-9"><span>1x Ostra (Oceano)</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="covo-10"><span>1x Concha (Oceano)</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 3x Covo</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="peixe-esp" data-type="all">
+                        <div class="bundle-header bg-azul-claro">
+                            <h3>🐠 Conjunto Peixes Especializados (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list fish-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-1"><span>1x Baiacu</span></label><span class="season-badge">☀️ Verão (Praia)</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-2"><span>1x Peixe-fantasma</span></label><span class="season-badge">🌐 Todas (Minas)</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-3"><span>1x Areinha</span></label><span class="season-badge">🌐 Todas (Deserto)</span></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="peixe-esp-4"><span>1x Madeirão</span></label><span class="season-badge">🌐 Todas (Bosque)</span></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Prato do Mar</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA AMIZADE -->
+            <section id="amizade" class="season-section">
+                <h2 class="section-title">❤️ Amizade</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="cozinheiro" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🍲 Conjunto de Cozinheiro (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-1"><span>1x Xarope de Ácer</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-2"><span>1x Broto de samambaia</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-3"><span>1x Trufa</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-4"><span>1x Papoula</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-5"><span>1x Hossomaki</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="cozinheiro-6"><span>1x Ovo frito</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 3x Bolo Rosa</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="forragem" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🌿 Conjunto Forragem (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="forragem-1"><span>10x Trigo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="forragem-2"><span>10x Palha</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="forragem-3"><span>3x Maçã</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Aquecedor</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="encantador" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>✨ Conjunto de Encantador (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-1"><span>1x Resina de carvalho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-2"><span>1x Vinho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-3"><span>1x Pé de coelho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="encantador-4"><span>1x Romã</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 5x Barra de Ouro</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="tinta" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🎨 Conjunto Tinta (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-1"><span>1x Cogumelo vermelho</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-2"><span>1x Ouriço-do-mar</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-3"><span>1x Girassol</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-4"><span>1x Pena de pato</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-5"><span>1x Água-marina</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="tinta-6"><span>1x Repolho roxo</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Gerador de Sementes</div>
+                    </div>
+                    <div class="bundle-card" data-bundle="pesquisa" data-type="all">
+                        <div class="bundle-header bg-vermelho">
+                            <h3>🔍 Conjunto Pesquisa de campo (Todos)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-1"><span>1x Cogumelo roxo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-2"><span>1x Concha de náutilo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-3"><span>1x Esquálio</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="pesquisa-4"><span>1x Geodo congelado</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> 1x Máquina de Reciclagem</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA JOJA -->
+            <section id="joja" class="season-section">
+                <h2 class="section-title">🛒 Joja</h2>
+                <div class="bundles-grid">
+                    <div class="bundle-card" data-bundle="joja" data-type="custom" data-required="5">
+                        <div class="bundle-header bg-azul-escuro">
+                            <h3>🛒 Conjunto A Desaparecida (5)</h3>
+                            <span class="bundle-status">Pendente</span>
+                        </div>
+                        <ul class="item-list">
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-1"><span>1x Vinho ⭐Prata</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-2"><span>1x Maionese de dinossauro</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-3"><span>1x Fragmento prismático</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-4"><span>5x ⭐ Fruta antiga</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-5"><span>1x ⭐ Salmão nulo</span></label></li>
+                            <li><label><input type="checkbox" class="item-checkbox" data-item="joja-6"><span>1x Caviar</span></label></li>
+                        </ul>
+                        <div class="reward">🎁 <strong>Recompensa:</strong> Cinema</div>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="wiki-footer">
-            <p>Stardew Valley Wiki Style &bull; Centro Comunitário 🏡</p>
+            <p>Stardew Valley Wiki Style &bull; Criado com carinho para fazendeiros 🌾</p>
         </footer>
     </div>
 
