@@ -1,0 +1,879 @@
+/* =========================================================
+   STARDEW VALLEY WIKI — CONSTRUÇÕES DA ROBIN
+   ========================================================= */
+
+/* ---------- VARIÁVEIS ---------- */
+
+:root {
+    --wiki-bg: #1c3b57;
+    --wiki-card-bg: #ffffff;
+
+    --wiki-header-bg: #4b7f52;
+    --wiki-header-dark: #385e3d;
+    --wiki-header-text: #ffffff;
+
+    --wiki-blue: #2b5270;
+    --wiki-blue-dark: #152d42;
+    --wiki-blue-light: #e2edf5;
+
+    --wiki-text: #222222;
+    --wiki-muted: #5c6f7d;
+
+    --wiki-border: #b0c4de;
+    --wiki-border-dark: #7a9cb8;
+
+    --table-hover: #f4f9fc;
+    --material-bg: #f8fbfd;
+    --size-bg: #eef6ee;
+
+    --shadow: rgba(0, 0, 0, 0.30);
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    color: var(--wiki-text);
+    background-color: var(--wiki-bg);
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+}
+
+
+/* =========================================================
+   PAPEL DE PAREDE
+   ========================================================= */
+
+.wallpaper-bg {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url('https://image.api.playstation.com/vulcan/img/rnd/202010/1520/yPmlPNe9extT2AVsv90hOKmn.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.35;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CONTAINER PRINCIPAL
+   ========================================================= */
+
+.wiki-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.40),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+
+    border: 3px solid #355c7d;
+}
+
+
+/* =========================================================
+   NAVBAR SUPERIOR
+   ========================================================= */
+
+.top-main-nav {
+    background-color: var(--wiki-blue-dark);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 12px 20px;
+
+    border-bottom: 2px solid #2b5270;
+
+    flex-wrap: wrap;
+}
+
+.top-main-nav a {
+    color: #cdd9e5;
+
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    padding: 4px 0;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.top-main-nav a:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.top-main-nav a.active {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.wiki-header {
+    background:
+        linear-gradient(
+            135deg,
+            #2b5270,
+            #1c3b57
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 28px 20px;
+
+    border-bottom: 4px solid var(--wiki-header-bg);
+}
+
+.wiki-header h1 {
+    font-size: 1.9rem;
+
+    margin-bottom: 7px;
+
+    text-shadow:
+        2px 2px #000,
+        1px 1px #000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    line-height: 1.3;
+}
+
+.wiki-header h1 img {
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    flex-shrink: 0;
+}
+
+.wiki-header p {
+    font-size: 0.95rem;
+
+    opacity: 0.92;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: 100%;
+}
+
+
+/* =========================================================
+   SEÇÃO PRINCIPAL
+   ========================================================= */
+
+.season-section {
+    display: block;
+
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TÍTULOS DAS SEÇÕES
+   ========================================================= */
+
+.section-title {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--wiki-header-bg),
+            #3d6d44
+        );
+
+    color: var(--wiki-header-text);
+
+    padding: 12px 16px;
+
+    font-size: 1.4rem;
+
+    border-radius: 7px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.section-title span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.section-title img {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================================================
+   SUBTÍTULOS
+   ========================================================= */
+
+h3 {
+    font-size: 1.2rem;
+
+    color: var(--wiki-blue);
+
+    margin: 20px 0 14px 0;
+
+    border-left: 5px solid var(--wiki-header-bg);
+
+    padding-left: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   ÁREA DAS TABELAS
+   ========================================================= */
+
+.table-responsive {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-bottom: 28px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+
+    border: 1px solid var(--wiki-border);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+thead th {
+    background:
+        linear-gradient(
+            to bottom,
+            #f5f9fc,
+            #e8f1f7
+        );
+
+    color: var(--wiki-blue);
+
+    font-weight: 800;
+
+    font-size: 0.95rem;
+
+    padding: 13px 12px;
+
+    text-align: center;
+
+    border-bottom: 2px solid var(--wiki-border);
+
+    white-space: nowrap;
+}
+
+
+/* ---------- CÉLULAS ---------- */
+
+tbody td {
+    padding: 16px 14px;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #dce7ef;
+
+    font-size: 0.92rem;
+
+    line-height: 1.5;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+tbody tr:hover {
+    background-color: var(--table-hover);
+
+    box-shadow:
+        inset 4px 0 0 var(--wiki-header-bg);
+}
+
+
+/* =========================================================
+   COLUNA DO ÍCONE DA CONSTRUÇÃO
+   ========================================================= */
+
+.construction-table th:first-child,
+.construction-table td:first-child {
+    width: 150px;
+
+    min-width: 150px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ÍCONES DAS CONSTRUÇÕES
+   ========================================================= */
+
+/*
+   ESTES SÃO OS ÍCONES GRANDES:
+   Celeiro, Galinheiro, Moinho, Galpão etc.
+
+   TAMANHO: 120px
+*/
+
+.construction-table td:first-child img {
+    width: 120px;
+    height: 120px;
+
+    max-width: 120px;
+    max-height: 120px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    display: block;
+
+    margin: 0 auto;
+
+    filter:
+        drop-shadow(
+            0 2px 2px rgba(0, 0, 0, 0.20)
+        );
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.construction-table tr:hover td:first-child img {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 3px 4px rgba(0, 0, 0, 0.28)
+        );
+}
+
+
+/* =========================================================
+   NOME DA CONSTRUÇÃO
+   ========================================================= */
+
+.construction-table td:nth-child(2) {
+    min-width: 150px;
+
+    text-align: left;
+
+    font-size: 1rem;
+
+    color: #263f52;
+}
+
+.construction-table td:nth-child(2) strong {
+    display: block;
+
+    font-size: 1rem;
+
+    color: #23445c;
+}
+
+
+/* =========================================================
+   CUSTO E MATERIAIS
+   ========================================================= */
+
+/*
+   Cada material fica em sua própria linha.
+   Exemplo:
+
+   🪙 6 000
+   🪵 350x Madeira
+   🪨 150x Pedra
+*/
+
+.construction-table td:nth-child(3) {
+    min-width: 245px;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    background-color: var(--material-bg);
+}
+
+
+/*
+   Imagens dos materiais NÃO ficam com 120px.
+   Elas continuam pequenas para não destruir a tabela.
+*/
+
+.construction-table td:nth-child(3) img {
+    width: 30px;
+    height: 30px;
+
+    max-width: 30px;
+    max-height: 30px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    vertical-align: middle;
+
+    margin-right: 6px;
+
+    margin-left: 0;
+
+    display: inline-block;
+}
+
+
+/*
+   Como o HTML possui os materiais juntos,
+   usamos espaçamento para separar visualmente
+   cada item.
+*/
+
+.construction-table td:nth-child(3) {
+    line-height: 2.1;
+}
+
+
+/* =========================================================
+   TAMANHO DA CONSTRUÇÃO
+   ========================================================= */
+
+.construction-table th:nth-child(4),
+.construction-table td:nth-child(4) {
+    min-width: 150px;
+
+    text-align: center;
+}
+
+
+/*
+   IMAGEM DO MARCADOR DE TAMANHO
+
+   Exemplo:
+   7x4
+   6x3
+   5x5
+
+   Fica grande e visível.
+*/
+
+.construction-table td:nth-child(4) img {
+    width: 100px;
+    height: 100px;
+
+    max-width: 100px;
+    max-height: 100px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    display: block;
+
+    margin: 0 auto 8px auto;
+
+    background-color: var(--size-bg);
+
+    border-radius: 6px;
+
+    padding: 5px;
+}
+
+
+/* Texto 7x4, 6x3 etc. */
+
+.construction-table td:nth-child(4) {
+    font-weight: 800;
+
+    color: #315d3a;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   TEMPO
+   ========================================================= */
+
+.construction-table th:nth-child(5),
+.construction-table td:nth-child(5) {
+    min-width: 110px;
+
+    text-align: center;
+}
+
+.construction-table td:nth-child(5) {
+    font-weight: 700;
+
+    color: #4b5e6b;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DIFERENCIAÇÃO VISUAL DE CASA / UPGRADES
+   ========================================================= */
+
+.construction-table tbody tr td {
+    background-color: #ffffff;
+}
+
+.construction-table tbody tr:hover td {
+    background-color: var(--table-hover);
+}
+
+
+/* =========================================================
+   TÍTULO DOS UPGRADES
+   ========================================================= */
+
+.section-title[style] {
+    margin-top: 35px !important;
+}
+
+
+/* =========================================================
+   ÍCONE DO TÍTULO DOS UPGRADES
+   ========================================================= */
+
+.section-title span img {
+    image-rendering: pixelated;
+}
+
+
+/* =========================================================
+   ÍCONES DAS CASAS
+   ========================================================= */
+
+/*
+   Os upgrades da casa também usam a mesma
+   coluna de ícones grandes.
+*/
+
+.construction-table td:first-child img[src*="House"] {
+    width: 120px;
+    height: 120px;
+
+    max-width: 120px;
+    max-height: 120px;
+}
+
+
+/* =========================================================
+   QUANDO NÃO HOUVER IMAGEM
+   ========================================================= */
+
+.construction-table td img[src=""] {
+    display: none;
+}
+
+
+/* =========================================================
+   TEXTO DENTRO DAS CÉLULAS
+   ========================================================= */
+
+.construction-table td strong {
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SEPARAÇÃO VISUAL DOS MATERIAIS
+   ========================================================= */
+
+.construction-table td:nth-child(3) {
+    white-space: normal;
+}
+
+
+/* =========================================================
+   SCROLLBAR DA TABELA
+   ========================================================= */
+
+.table-responsive::-webkit-scrollbar {
+    height: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #e5eef4;
+
+    border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #7898ae;
+
+    border-radius: 10px;
+
+    border: 2px solid #e5eef4;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #52758e;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .wiki-container {
+        max-width: 100%;
+    }
+
+    .top-main-nav {
+        gap: 20px;
+    }
+
+    .season-section {
+        padding: 22px;
+    }
+
+    .wiki-header h1 {
+        font-size: 1.55rem;
+    }
+
+    .construction-table td:first-child img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .construction-table td:nth-child(4) img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 6px;
+    }
+
+    .wiki-container {
+        border-width: 2px;
+
+        border-radius: 8px;
+    }
+
+    .top-main-nav {
+        gap: 12px;
+
+        padding: 10px;
+
+        justify-content: center;
+    }
+
+    .top-main-nav a {
+        font-size: 0.82rem;
+    }
+
+    .wiki-header {
+        padding: 20px 12px;
+    }
+
+    .wiki-header h1 {
+        font-size: 1.25rem;
+
+        gap: 7px;
+    }
+
+    .wiki-header h1 img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .wiki-header p {
+        font-size: 0.82rem;
+    }
+
+    .season-section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.15rem;
+
+        padding: 10px 12px;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    /*
+       Mantemos 120px nos ícones mesmo no celular.
+       A tabela passa a ter scroll horizontal.
+    */
+
+    .construction-table td:first-child img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .construction-table td:nth-child(4) img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+.top-main-nav a:focus-visible {
+    outline: 3px solid #ffffff;
+
+    outline-offset: 4px;
+
+    border-radius: 3px;
+}
+
+.construction-table tr:focus-within {
+    outline: 2px solid var(--wiki-header-bg);
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+   ========================================================= */
+
+::selection {
+    background-color: #4b7f52;
+
+    color: #ffffff;
+}
