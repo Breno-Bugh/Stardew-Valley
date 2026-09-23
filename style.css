@@ -1,0 +1,23 @@
+:root {
+    --wiki-bg: #1c3b57;
+    --wiki-card-bg: #ffffff;
+    --wiki-header-bg: #4b7f52;
+    --wiki-header-text: #ffffff;
+    --wiki-text: #222222;
+    --wiki-border: #b0c4de;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--wiki-text);
+    background-color: var(--wiki-bg);
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+}

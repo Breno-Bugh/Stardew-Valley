@@ -9,18 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://stardewvalleywiki.com/mediawiki/images/3/3c/Golden_Chicken.png"
         type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="wallpaper-bg"></div>
     <div class="wiki-container">
         <!-- Nova Navbar Superior -->
-        <header class="top-main-nav">
-            <a href="Estacoes.html">Estações</a>
-            <a href="centro.html">Centro Comunitário</a>
-            <a href="minas.html">Minas</a>
-            <a href="construcoes.html">Construções</a>
-        </header>
+        <header id="header"></header>
 
         <div class="wiki-header">
             <h1>
@@ -51,6 +47,9 @@
             <button onclick="switchTab('extra')" class="tab-btn" data-tab="extra"><span><img
                         src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/e7/Fishing_Skill_Icon.png/32px-Fishing_Skill_Icon.png"
                         alt="" height="20px">Outros Peixes</span></button>
+            <button onclick="switchTab('npcs')" class="tab-btn" data-tab="npcs"><span><img
+                        src="https://stardewvalleywiki.com/mediawiki/images/b/b6/Lewis_Icon.png"
+                        alt="" height="20px">Npcs</span></button>
         </nav>
 
         <!-- Nova Barra de Filtro de Conteúdo -->
@@ -64,6 +63,31 @@
         </div>
 
         <main>
+            <section id="npcs" class="season-section active">
+                <h2 class="section-title">
+                    <span style="display: flex;"><img
+                            src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/9c/Spring.png/24px-Spring.png"
+                            alt="" id="imgs-npcs"> Npcs</span>
+                </h2>
+
+                <div class="content-block birthdays-block">
+                    <h3>🎁 Presentes dos NPCs</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NPC</th>
+                                    <th>O que Ama (❤️)</th>
+                                    <th>O que Gosta (👍)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="todosNpcs"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </section>
             <!-- PRIMAVERA -->
             <section id="spring" class="season-section active">
                 <h2 class="section-title">
@@ -84,139 +108,7 @@
                                     <th>O que Gosta (👍)</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>04</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/8/86/Kent_Icon.png"
-                                                alt="" id="npc">Kent</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/18/Roasted_Hazelnuts.png/24px-Roasted_Hazelnuts.png"
-                                                alt="">Avelãs Torradas,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/2d/Fiddlehead_Risotto.png/24px-Fiddlehead_Risotto.png"
-                                                alt=""> Risoto de Samambaia
-                                        </span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso</span></td>
-                                </tr>
-                                <tr>
-                                    <td>07</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/b/b6/Lewis_Icon.png"
-                                                alt="" id="npc">Lewis</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f1/Hot_Pepper.png/24px-Hot_Pepper.png"
-                                                alt="">Pimenta,<img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/30/Glazed_Yams.png/24px-Glazed_Yams.png"
-                                                alt="">Inhames com Cobertura</span></td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/2/2f/Coconut.png"
-                                                alt="">Coco, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/9/9e/Blueberry.png"
-                                                alt="">Mirtilo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/0/0b/Vincent_Icon.png"
-                                                alt="" id="npc">Vincent</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/c/c2/Grape.png/24px-Grape.png"
-                                                alt="">Uva, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/d2/Snail.png/24px-Snail.png"
-                                                alt="">Lesma</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/2/2f/Coconut.png"
-                                                alt="">Coco</span></td>
-                                </tr>
-                                <tr>
-                                    <td>14</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/f/f7/Haley_Icon.png"
-                                                alt="" id="npc">Haley</span></td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/2/2f/Coconut.png"
-                                                alt="">Coco, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/81/Sunflower.png/24px-Sunflower.png"
-                                                alt="">Girassol</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso</span></td>
-                                </tr>
-                                <tr>
-                                    <td>18</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/b/b6/Pam_Icon.png"
-                                                alt="" id="npc">Pam</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/db/Parsnip.png/24px-Parsnip.png"
-                                                alt="">Chirívia, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/b/b3/Beer.png/24px-Beer.png"
-                                                alt="">Cerveja</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso</span></td>
-                                </tr>
-                                <tr>
-                                    <td>20</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/b/b4/Shane_Icon.png"
-                                                alt="" id="npc">Shane</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f1/Hot_Pepper.png/24px-Hot_Pepper.png"
-                                                alt="">Pimenta, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/b/b3/Beer.png/24px-Beer.png"
-                                                alt="">Cerveja</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/5/5d/Large_Egg.png/24px-Large_Egg.png"
-                                                alt="">Ovo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>26</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Pierre_Icon.png"
-                                                alt="" id="npc">Pierre</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/25/Fried_Calamari.png/24px-Fried_Calamari.png"
-                                                alt="">Lula frita</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/b/b1/Dandelion.png"
-                                                alt="">Dente-de-leão</span></td>
-                                </tr>
-                                <tr>
-                                    <td>27</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/c/c3/Emily_Icon.png"
-                                                alt="" id="npc">Emily</span></td>
-                                    <td>
-                                        <span><img src="" alt="">
-                                            <!-- <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a2/Aquamarine.png/24px-Aquamarine.png" alt="">Áqua-Marina, 
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/2e/Amethyst.png/24px-Amethyst.png" alt="">Ametista, 
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6a/Emerald.png/24px-Emerald.png" alt="">Esmeralda, 
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/7/7e/Jade.png/24px-Jade.png" alt="">Jade, 
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Ruby.png/24px-Ruby.png" alt="">Ruby,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a5/Topaz.png/24px-Topaz.png" alt="">Topázio -->
-
-                                            Gemas raras(<img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a2/Aquamarine.png/24px-Aquamarine.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/2e/Amethyst.png/24px-Amethyst.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6a/Emerald.png/24px-Emerald.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/7/7e/Jade.png/24px-Jade.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Ruby.png/24px-Ruby.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a5/Topaz.png/24px-Topaz.png"
-                                                alt="">)
-                                    </td>
-                                    </span>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                            </tbody>
+                            <tbody id="niverPrima"></tbody>
                         </table>
                     </div>
                 </div>
@@ -739,162 +631,7 @@
                                     <th>O que Gosta (👍)</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>04</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/6/68/Jas_Icon.png"
-                                                alt="" id="npc">Jas</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/32/Pink_Cake.png/24px-Pink_Cake.png"
-                                                alt="">Bolo rosa</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/2/2f/Coconut.png"
-                                                alt="">Coco</span></td>
-                                </tr>
-                                <tr>
-                                    <td>08</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/d/db/Gus_Icon.png"
-                                                alt="" id="npc">Gus</span></td>
-                                    <td><span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/4/43/Orange.png/24px-Orange.png"
-                                                alt="">Laranja,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ea/Diamond.png/24px-Diamond.png"
-                                                alt="">Diamante
-                                        </span>
-                                    </td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/2/23/Maru_Icon.png"
-                                                alt="" id="npc">Maru</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/aa/Cauliflower.png/24px-Cauliflower.png"
-                                                alt="">Couve-flor,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6d/Strawberry.png/24px-Strawberry.png"
-                                                alt="">Morango
-                                    </td>
-                                    </span>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>13</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/7/73/Alex_Icon.png"
-                                                alt="" id="npc">Alex</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/3d/Complete_Breakfast.png/24px-Complete_Breakfast.png"
-                                                alt=""> Café da manhã completo,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/8/8b/Salmon_Dinner.png"
-                                                alt="">Jantar de salmão
-                                        </span>
-                                    </td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/1/1b/Field_Snack.png"
-                                                alt="">Lanchinho</span></td>
-                                </tr>
-                                <tr>
-                                    <td>17</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/5/52/Sam_Icon.png"
-                                                alt="" id="npc">Sam</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f4/Pizza.png/24px-Pizza.png"
-                                                alt="">Pizza,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6e/Tigerseye.png/24px-Tigerseye.png"
-                                                alt="">Olho de Tigre
-                                        </span>
-                                    </td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/d/d5/Joja_Cola.png"
-                                                alt="">Joja-cola</span></td>
-                                </tr>
-                                <tr>
-                                    <td>19</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/0/0b/Demetrius_Icon.png"
-                                                alt="" id="npc">Demetrius</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6d/Strawberry.png/24px-Strawberry.png"
-                                                alt="">Morango,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/5/5d/Ice_Cream.png/24px-Ice_Cream.png"
-                                                alt="">Sorvete</span></td>
-                                    <td>
-                                        <span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Purple_Mushroom.png"
-                                                alt="">Cogumelo roxo</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>22</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/0/08/Dwarf_Icon.png"
-                                                alt="" id="npc">Anão</span></td>
-                                    <td>
-                                        <span>
-                                            Gemas raras(<img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a2/Aquamarine.png/24px-Aquamarine.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/2e/Amethyst.png/24px-Amethyst.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6a/Emerald.png/24px-Emerald.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/7/7e/Jade.png/24px-Jade.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Ruby.png/24px-Ruby.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a5/Topaz.png/24px-Topaz.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/31/Lemon_Stone.png/24px-Lemon_Stone.png"
-                                                alt=""> )
-                                        </span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>24</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/7/73/Willy_Icon.png"
-                                                alt="" id="npc">Willy</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/64/Pumpkin.png/24px-Pumpkin.png"
-                                                alt="">Abóbora,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/99/Catfish.png/24px-Catfish.png"
-                                                alt="">Bagre,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ea/Diamond.png/24px-Diamond.png"
-                                                alt="">Diamante</span></td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>26</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/3/3d/Leo_Icon.png"
-                                                alt="" id="npc">Leo</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/38/Mango.png/24px-Mango.png"
-                                                alt="">Manga,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f9/Duck_Feather.png/24px-Duck_Feather.png"
-                                                alt="">Pena de pato
-                                        </span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                            </tbody>
+                            <tbody id="niverVerao"></tbody>
                         </table>
                     </div>
                 </div>
@@ -1544,137 +1281,7 @@
                                     <th>O que Gosta (👍)</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>02</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/b/bc/Penny_Icon.png"
-                                                alt="" id="npc">Penny</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ea/Diamond.png/24px-Diamond.png"
-                                                alt="">Diamante,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6a/Emerald.png/24px-Emerald.png"
-                                                alt="">Esmeralda,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/19/Melon.png/24px-Melon.png"
-                                                alt="">Melão,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/37/Poppy.png/24px-Poppy.png"
-                                                alt="">Papoula,
-                                        </span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/5/57/Leek.png"
-                                                alt="">Alho-poró</span></td>
-                                </tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/6/6f/Elliott_Icon.png"
-                                                alt="" id="npc">Elliott</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/9f/Lobster.png/24px-Lobster.png"
-                                                alt="">Lagosta,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/1b/Pomegranate.png/24px-Pomegranate.png"
-                                                alt="">Romã
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/8/81/Squid.png"
-                                                alt="">Lula,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/5/5a/Octopus.png"
-                                                alt="">Polvo
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>11</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/f/f7/Jodi_Icon.png"
-                                                alt="" id="npc">Jodi</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ea/Diamond.png/24px-Diamond.png"
-                                                alt="">Diamante,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/87/Chocolate_Cake.png/24px-Chocolate_Cake.png"
-                                                alt="">Bolo de chocolate</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/5/5d/Large_Egg.png/24px-Large_Egg.png"
-                                                alt="">Ovo</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>13</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/6/63/Abigail_Icon.png"
-                                                alt="" id="npc">Abigail</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/2e/Amethyst.png/24px-Amethyst.png"
-                                                alt="">Ametista,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/64/Pumpkin.png/24px-Pumpkin.png"
-                                                alt="">Abóbora</span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>15</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/7/7d/Sandy_Icon.png"
-                                                alt="" id="npc">Sandy</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/d/d9/Sweet_Pea.png/24px-Sweet_Pea.png"
-                                                alt="">Ervilha-de-cheiro</span></td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>18</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/d/d4/Marnie_Icon.png"
-                                                alt="" id="npc">Marnie</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ea/Diamond.png/24px-Diamond.png"
-                                                alt="">Diamante, <img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/3/32/Pink_Cake.png/24px-Pink_Cake.png"
-                                                alt="">Bolo rosa</span></td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>21</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/d/d1/Robin_Icon.png"
-                                                alt="" id="npc">Robin</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/0/08/Spaghetti.png/24px-Spaghetti.png"
-                                                alt="">Espaguete,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/e2/Peach.png/24px-Peach.png"
-                                                alt="">Pêssego
-                                    </td>
-                                    </span>
-                                    <td><span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/e/ed/Hardwood.png"
-                                                alt="">Madeira de lei,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo
-                                        </span></td>
-                                </tr>
-                                <tr>
-                                    <td>24</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/a/ad/George_Icon.png"
-                                                alt="" id="npc">George</span></td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/5/57/Leek.png"
-                                                alt="">Alho-poró</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso</span></td>
-                                </tr>
-                            </tbody>
+                            <tbody id="niverOutono"></tbody>
                         </table>
                     </div>
                 </div>
@@ -2287,214 +1894,7 @@
                                     <th>O que Gosta (👍)</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/1/10/Krobus_Icon.png"
-                                                alt="" id="npc">Krobus</span></td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/64/Pumpkin.png/24px-Pumpkin.png"
-                                                alt="">Abóbora,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/5/58/Void_Egg.png/24px-Void_Egg.png"
-                                                alt="">Ovo nulo
-                                        </span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/d/db/Linus_Icon.png"
-                                                alt="" id="npc">Linus</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/5/52/Yam.png/24px-Yam.png"
-                                                alt="">Inhame,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/2/2f/Coconut.png"
-                                                alt="">Coco</span>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            Coletas (
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/5/57/Leek.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/b/b1/Dandelion.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/9/90/Wild_Horseradish.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/2/2e/Common_Mushroom.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/1/11/Winter_Root.png"
-                                                alt="">...
-                                            )
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>07</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/d/d4/Caroline_Icon.png"
-                                                alt="" id="npc">Caroline</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/9f/Summer_Spangle.png/24px-Summer_Spangle.png"
-                                                alt="">Flor-Miçanga,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/8f/Green_Tea.png/24px-Green_Tea.png"
-                                                alt="">Chá verde
-                                    </td>
-                                    </span>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png"
-                                                alt="">Narciso,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/9/90/Wild_Horseradish.png"
-                                                alt="">Raiz-forte
-                                        </span></td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/6/6a/Sebastian_Icon.png"
-                                                alt="" id="npc">Sebastian</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ec/Frozen_Tear.png/24px-Frozen_Tear.png"
-                                                alt="">
-                                            Lágrima Congelada
-                                    </td>
-                                    </span>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>14</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/7/7a/Harvey_Icon.png"
-                                                alt="" id="npc">Harvey</span></td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/e9/Coffee.png/24px-Coffee.png"
-                                                alt="">
-                                            Café,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/c/c7/Pickles.png/24px-Pickles.png"
-                                                alt="">Picles
-                                        </span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo,
-                                            Coletas (
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/5/57/Leek.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/b/b1/Dandelion.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/9/90/Wild_Horseradish.png"
-                                                alt="">...
-                                            )
-                                        </span></td>
-                                </tr>
-                                <tr>
-                                    <td>17</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/e/e9/Wizard_Icon.png"
-                                                alt="" id="npc">Feiticeiro</span></td>
-                                    <td>
-                                        <span>
-
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f4/Solar_Essence.png/24px-Solar_Essence.png"
-                                                alt="">Essência solar,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/1/1f/Void_Essence.png/24px-Void_Essence.png"
-                                                alt="">Essência do Vazio
-                                        </span>
-                                    </td>
-                                    <td><span><img src="https://stardewvalleywiki.com/mediawiki/images/c/cf/Quartz.png"
-                                                alt="">Quartzo</span></td>
-                                </tr>
-                                <tr>
-                                    <td>20</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/5/54/Evelyn_Icon.png"
-                                                alt="" id="npc">Evelyn</span></td>
-                                    <td>
-                                        <span>
-
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a4/Beet.png/24px-Beet.png"
-                                                alt="">Beterraba,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ea/Diamond.png/24px-Diamond.png"
-                                                alt="">Diamante
-                                        </span>
-
-                                    </td>
-                                    <td>
-                                        <span>
-
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/b/b5/Broken_Glasses.png"
-                                                alt="">Lixo,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/e/ed/Clam.png"
-                                                alt="">Concha
-                                        </span>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>23</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/6/6e/Leah_Icon.png"
-                                                alt="" id="npc">Leah</span></td>
-                                    <td>
-                                        <span>
-
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/e/ed/Stir_Fry.png/24px-Stir_Fry.png"
-                                                alt="">Refogado,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/f/f2/Truffle.png/24px-Truffle.png"
-                                                alt="">Trufa
-                                        </span>
-                                    </td>
-                                    <td><span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/6/63/Driftwood.png"
-                                                alt="">Lixo,
-                                            Coletas (
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/5/57/Leek.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/b/b1/Dandelion.png"
-                                                alt="">...
-                                            )
-                                        </span></td>
-                                </tr>
-                                <tr>
-                                    <td>26</td>
-                                    <td><span><img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/7/74/Clint_Icon.png"
-                                                alt="" id="npc">Clint</span></td>
-                                    <td>
-                                        <span>
-                                            Gemas raras(<img
-                                                src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a2/Aquamarine.png/24px-Aquamarine.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/2/2e/Amethyst.png/24px-Amethyst.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/6/6a/Emerald.png/24px-Emerald.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/7/7e/Jade.png/24px-Jade.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a9/Ruby.png/24px-Ruby.png"
-                                                alt="">
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a5/Topaz.png/24px-Topaz.png"
-                                                alt="">),
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/thumb/4/4e/Gold_Bar.png/24px-Gold_Bar.png"
-                                                alt="">Barra de Ouro
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/f/f1/Copper_Bar.png"
-                                                alt="">Barra de Cobre,
-                                            <img src="https://stardewvalleywiki.com/mediawiki/images/6/6c/Iron_Bar.png"
-                                                alt="">Barra de Ferro
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody id="niverInverno"></tbody>
                         </table>
                     </div>
                 </div>
@@ -3374,50 +2774,7 @@
                 
             </section>
 
-            <!-- RESUMO -->
-            <!-- <section id="resumo" class="season-section">
-                <h2 class="section-title">📋 Resumo por Estação</h2>
-
-                <div class="summary-grid">
-                    <div class="summary-card">
-                        <h4><span><img
-                                    src="https://stardewvalleywiki.com/mediawiki/images/thumb/9/9c/Spring.png/24px-Spring.png"
-                                    alt=""> Primavera</span></h4>
-                        <p><strong>Aniversários:</strong> Kent (4), Lewis (7), Vincent (10), Haley (14), Pam (18), Shane
-                            (20), Pierre (26), Emily (27).</p>
-                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Cidade, Montanha, Floresta Secreta, Pântano.
-                        </p>
-                    </div>
-                    <div class="summary-card">
-                        <h4><span><img
-                                    src="https://stardewvalleywiki.com/mediawiki/images/thumb/8/85/Summer.png/24px-Summer.png"
-                                    alt=""> Verão</span></h4>
-                        <p><strong>Aniversários:</strong> Jas (4), Gus (8), Maru (10), Alex (13), Sam (17), Demetrius
-                            (19), Anão (22), Willy (24), Leo (26).</p>
-                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Montanha, Floresta, Leste da Praia.</p>
-                    </div>
-                    <div class="summary-card">
-                        <h4><span><img
-                                    src="https://stardewvalleywiki.com/mediawiki/images/thumb/5/5d/Fall.png/24px-Fall.png"
-                                    alt="">
-                                Outono</span></h4>
-                        <p><strong>Aniversários:</strong> Penny (2), Elliott (5), Jodi (11), Abigail (13), Sandy (15),
-                            Marnie (18), Robin (21), George (24).</p>
-                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Cidade, Montanha, Floresta, Rio Acima (Mercado
-                            Joja).</p>
-                    </div>
-                    <div class="summary-card">
-                        <h4><span><img
-                                    src="https://stardewvalleywiki.com/mediawiki/images/thumb/a/a7/Winter.png/24px-Winter.png"
-                                    alt=""> Inverno</span></h4>
-                        <p><strong>Aniversários:</strong> Krobus (1), Linus (3), Caroline (7), Sebastian (10), Harvey
-                            (14), Feiticeiro (17), Evelyn (20), Leah (23), Clint (26).</p>
-                        <p><strong>Pesca por Local:</strong> Oceano, Rio, Montanha, Sul da Floresta, Minas (Andares 20,
-                            60, 100).</p>
-                    </div>
-                </div>
-            </section> -->
-        </main>
+            </main>
 
         <footer class="wiki-footer">
             <p>Stardew Valley Wiki Style &bull; Criado com carinho para fazendeiros 🌾</p>
@@ -3425,6 +2782,7 @@
     </div>
 
     <script src="estacoes.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
